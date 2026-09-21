@@ -1,7 +1,7 @@
 import { defineConfig } from 'vite'
 
 export default defineConfig({
-	base: '/linkwalk/',
+	base: '/museum/',
 	resolve: {
 		dedupe: ['three'],
 	},

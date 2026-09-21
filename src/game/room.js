@@ -1150,7 +1150,7 @@ export function buildRoom({ width, length, height, wallThickness = 0.2, mode = '
 					disposables.push(tex)
 				},
 				onError(err) {
-					console.warn('[linkwalk] Failed to load gallery image', mainThumbnailUrl, err)
+					console.warn('[museum] Failed to load gallery image', mainThumbnailUrl, err)
 					applyNoPhoto()
 				},
 			})
@@ -1407,7 +1407,7 @@ export function buildRoom({ width, length, height, wallThickness = 0.2, mode = '
 						const p2 = video.play()
 						if (p2 && typeof p2.then === 'function') await p2
 					} catch (err2) {
-						console.warn('[linkwalk] Video playback failed', err2)
+						console.warn('[museum] Video playback failed', err2)
 					}
 				}
 			}
@@ -1718,7 +1718,7 @@ export function buildRoom({ width, length, height, wallThickness = 0.2, mode = '
 					fitTiktokScreen(texture?.image?.width || 1, texture?.image?.height || 1)
 				},
 				undefined,
-				(error) => console.warn('[linkwalk] Failed to load TikTok poster', entry.posterUrl, error)
+				(error) => console.warn('[museum] Failed to load TikTok poster', entry.posterUrl, error)
 			)
 		}
 
@@ -1751,7 +1751,7 @@ export function buildRoom({ width, length, height, wallThickness = 0.2, mode = '
 				video.addEventListener('pause', updatePlayOverlay)
 				video.addEventListener('ended', updatePlayOverlay)
 				roomVideoPlayers.push(video)
-				video._linkwalkDeactivate = () => {
+				video._museumDeactivate = () => {
 					stopCurrentTiktok()
 					loadCurrentPoster()
 					updatePlayOverlay()
@@ -1781,7 +1781,7 @@ export function buildRoom({ width, length, height, wallThickness = 0.2, mode = '
 
 			for (const otherVideo of roomVideoPlayers) {
 				if (otherVideo === selectedVideo) continue
-				if (typeof otherVideo._linkwalkDeactivate === 'function') otherVideo._linkwalkDeactivate()
+				if (typeof otherVideo._museumDeactivate === 'function') otherVideo._museumDeactivate()
 				else if (!otherVideo.paused) otherVideo.pause()
 			}
 			screenMat.map = videoTexture
@@ -1793,7 +1793,7 @@ export function buildRoom({ width, length, height, wallThickness = 0.2, mode = '
 				try {
 					await selectedVideo.play()
 				} catch (error) {
-					console.warn('[linkwalk] TikTok playback failed', error)
+					console.warn('[museum] TikTok playback failed', error)
 				}
 			}
 		}
@@ -2033,7 +2033,7 @@ export function buildRoom({ width, length, height, wallThickness = 0.2, mode = '
 				undefined,
 				(error) => {
 					if (requestId === textureRequestId) isPlateLoading = false
-					console.warn('[linkwalk] Failed to load Chef Sachi food photo', chefFoodPhotos[index], error)
+					console.warn('[museum] Failed to load Chef Sachi food photo', chefFoodPhotos[index], error)
 				}
 			)
 		}
@@ -2368,7 +2368,7 @@ export function buildRoom({ width, length, height, wallThickness = 0.2, mode = '
 						disposables.push(loadedTexture)
 					},
 					onError(error) {
-						console.warn('[linkwalk] Failed to load board-side photo', url, error)
+						console.warn('[museum] Failed to load board-side photo', url, error)
 					},
 				})
 			}
@@ -3224,7 +3224,7 @@ export function buildRoom({ width, length, height, wallThickness = 0.2, mode = '
 					url,
 					onLoad: (tex) => applyTexture(tex),
 					onError: (err) => {
-						console.warn('[linkwalk] Failed to load wall photo', url, err)
+						console.warn('[museum] Failed to load wall photo', url, err)
 						applyTexture(makeNoPhotoTexture({ size: 512, title: placeholderTitle }))
 					},
 				})
@@ -3396,7 +3396,7 @@ export function buildRoom({ width, length, height, wallThickness = 0.2, mode = '
 						disposables.push(loadedPosterTexture)
 					},
 					onError(error) {
-						console.warn('[linkwalk] Failed to load video poster', entry.posterUrl, error)
+						console.warn('[museum] Failed to load video poster', entry.posterUrl, error)
 					},
 				})
 			}
@@ -3438,7 +3438,7 @@ export function buildRoom({ width, length, height, wallThickness = 0.2, mode = '
 				videoTexture.needsUpdate = true
 				disposables.push(videoTexture)
 
-				video._linkwalkDeactivate = () => {
+				video._museumDeactivate = () => {
 					video.pause()
 					if (loadedVideoUrl) {
 						video.removeAttribute('src')
@@ -3460,7 +3460,7 @@ export function buildRoom({ width, length, height, wallThickness = 0.2, mode = '
 
 				for (const otherVideo of roomVideoPlayers) {
 					if (otherVideo === selectedVideo) continue
-					if (typeof otherVideo._linkwalkDeactivate === 'function') otherVideo._linkwalkDeactivate()
+					if (typeof otherVideo._museumDeactivate === 'function') otherVideo._museumDeactivate()
 					else if (!otherVideo.paused) otherVideo.pause()
 				}
 
@@ -3480,7 +3480,7 @@ export function buildRoom({ width, length, height, wallThickness = 0.2, mode = '
 					try {
 						await selectedVideo.play()
 					} catch (error) {
-						console.warn('[linkwalk] Video playback failed', error)
+						console.warn('[museum] Video playback failed', error)
 					}
 				}
 			}
@@ -3503,7 +3503,7 @@ export function buildRoom({ width, length, height, wallThickness = 0.2, mode = '
 				dispose() {
 					if (!video) return
 					try {
-						if (typeof video._linkwalkDeactivate === 'function') video._linkwalkDeactivate()
+						if (typeof video._museumDeactivate === 'function') video._museumDeactivate()
 					} catch {
 						// The room is already being torn down.
 					}

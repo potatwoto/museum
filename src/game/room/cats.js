@@ -254,7 +254,7 @@ export function addMuseumCats({ group, disposables, pickableMeshes, obstacles, w
 			}
 		})
 		.catch((error) => {
-			console.warn('[linkwalk] Cat model failed to load', error)
+			console.warn('[museum] Cat model failed to load', error)
 		})
 
 	const direction = new THREE.Vector3()

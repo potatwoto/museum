@@ -1,6 +1,6 @@
 const default_wiki_language = 'en'
 const default_timeout = 8000
-const gallery_persist_key = 'linkwalk:galleryCache:v2'
+const gallery_persist_key = 'museum:galleryCache:v2'
 const gallery_persist_max = 80
 const gallery_persist_ttl = 24 * 60 * 60 * 1000
 let wikiLang = default_wiki_language
@@ -127,7 +127,7 @@ async function fetchJsonWithTimeout(url, { signal } = {}) {
 			method: 'GET',
 			headers: {
 				accept: 'application/json',
-				'Api-User-Agent': 'linkwalk (local dev)',
+				'Api-User-Agent': 'museum (local dev)',
 			},
 			signal: controller.signal,
 		})
@@ -710,7 +710,7 @@ async function filterOutDisambiguationPages(pages, { signal } = {}) {
 			}
 		}
 	} catch (err) {
-		console.warn('[linkwalk] Failed to filter disambiguation related pages', err)
+		console.warn('[museum] Failed to filter disambiguation related pages', err)
 		return pages
 	}
 
@@ -953,7 +953,7 @@ export async function fetchGalleryRoomData(title, opts = {}) {
 					}
 				}
 			} catch (err) {
-				console.warn('[linkwalk] Failed to filter cached images', err)
+				console.warn('[museum] Failed to filter cached images', err)
 			}
 		}
 	}
@@ -992,7 +992,7 @@ export async function fetchGalleryRoomData(title, opts = {}) {
 					mainThumbnailUrl = null
 				}
 			} catch (err) {
-				console.warn('[linkwalk] Failed to filter large Wikipedia images', err)
+				console.warn('[museum] Failed to filter large Wikipedia images', err)
 			}
 		}
 

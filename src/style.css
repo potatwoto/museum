@@ -299,7 +299,7 @@ canvas:focus {
 	border-radius: 50%;
 	border: 2px solid rgba(255, 255, 255, 0.5);
 	border-top-color: rgba(212, 187, 255, 1);
-	animation: linkwalk-spin 0.8s linear infinite;
+	animation: museum-spin 0.8s linear infinite;
 	opacity: 1;
 }
 
@@ -308,7 +308,7 @@ canvas:focus {
 	display: none;
 }
 
-@keyframes linkwalk-spin {
+@keyframes museum-spin {
 	from {
 		transform: rotate(0deg);
 	}

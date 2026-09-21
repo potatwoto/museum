@@ -965,7 +965,7 @@ export function startYourEngines({
 					try {
 						onClick({ object: cur, hitObject: hitObj, hitPoint, camera })
 					} catch (err) {
-						console.warn('[linkwalk] onClick handler failed', err)
+						console.warn('[museum] onClick handler failed', err)
 					}
 					return
 				}
@@ -976,10 +976,10 @@ export function startYourEngines({
 						try {
 							onRandomExhibitRequested()
 						} catch (err) {
-							console.warn('[linkwalk] Random exhibit handler failed', err)
+							console.warn('[museum] Random exhibit handler failed', err)
 						}
 					} else {
-						console.info('[linkwalk] Random exhibit requested')
+						console.info('[museum] Random exhibit requested')
 					}
 					return
 				}
@@ -989,10 +989,10 @@ export function startYourEngines({
 						try {
 							onGoLobbyRequested()
 						} catch (err) {
-							console.warn('[linkwalk] Go lobby handler failed', err)
+							console.warn('[museum] Go lobby handler failed', err)
 						}
 					} else {
-						console.info('[linkwalk] Go lobby requested')
+						console.info('[museum] Go lobby requested')
 					}
 					return
 				}
@@ -1026,7 +1026,7 @@ export function startYourEngines({
 		if (typeof onDoorTrigger === 'function') {
 			onDoorTrigger(door)
 		} else {
-			console.info(`[linkwalk] Door clicked: ${doorId}`)
+			console.info(`[museum] Door clicked: ${doorId}`)
 		}
 	}
 
@@ -1287,7 +1287,7 @@ export function startYourEngines({
 			try {
 				currentRoom.update(dt, clock.elapsedTime, camera.position)
 			} catch (error) {
-				console.warn('[linkwalk] Room animation failed', error)
+				console.warn('[museum] Room animation failed', error)
 				currentRoom.update = null
 			}
 		}

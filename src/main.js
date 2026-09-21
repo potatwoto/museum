@@ -72,7 +72,7 @@ overlayEl.addEventListener('keydown', (e) => {
 	if (e.code === 'Enter' || e.code === 'Space') requestPlay()
 })
 
-const LANGUAGE_PERSIST_KEY = 'linkwalk:language:v1'
+const LANGUAGE_PERSIST_KEY = 'museum:language:v1'
 
 function baseLobbyCategoriesForLanguage(lang) {
 	const languageCode = String(lang || '').trim().toLowerCase()
@@ -251,7 +251,7 @@ let wikiAbortController = null
 let activeNavId = 0
 let activeDoorLabelOverride = null
 
-const trail_key_from_local_storage = 'linkwalk:trail:v1'
+const trail_key_from_local_storage = 'museum:trail:v1'
 const trail_maximum_length = 30
 
 function loadTrailPersist() {
@@ -304,7 +304,7 @@ function setUrlAndState(title, { push = false } = {}) {
 
 	const q = nextParams.toString()
 	const url = q ? `${window.location.pathname}?${q}` : window.location.pathname
-	const nextState = { linkwalk: true, idx: historyIndex, title: title || null }
+	const nextState = { museum: true, idx: historyIndex, title: title || null }
 
 	if (push) {
 		historyIndex += 1
@@ -384,7 +384,7 @@ function loadAndEnterGallery(title, { pushHistory = false, spawn, updateUrlState
 		})
 		.catch((err) => {
 			if (err && err.code === 'aborted') return
-			console.warn('[linkwalk] Wiki fetch failed', err)
+			console.warn('[museum] Wiki fetch failed', err)
 		})
 		.finally(() => {
 			if (navId !== activeNavId) return
@@ -501,7 +501,7 @@ window.addEventListener('popstate', (e) => {
 	const { changed } = syncLanguageFromUrlOrStorage()
 
 	const st = e?.state
-	if (st && st.linkwalk && typeof st.idx === 'number') {
+	if (st && st.museum && typeof st.idx === 'number') {
 		historyIndex = st.idx
 	}
 
