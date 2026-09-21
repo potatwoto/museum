@@ -30,12 +30,12 @@ const videos = [
 	{
 		url: elevatorWarmupVideoUrl,
 		posterUrl: elevatorWarmupPosterUrl,
-		caption: 'couch potato.exe has started moving',
+		caption: 'oye hoyee hoyee',
 	},
 	{
 		url: elevatorConfidenceVideoUrl,
 		posterUrl: elevatorConfidencePosterUrl,
-		caption: 'same step, fresh confidence',
+		caption: 'hoyee oyee hoyee',
 	},
 	{
 		url: mirrorRehearsalVideoUrl,
@@ -46,48 +46,48 @@ const videos = [
 	{
 		url: stripedStepOneVideoUrl,
 		posterUrl: stripedStepOnePosterUrl,
-		caption: 'dance kam, expressions zyada',
+		caption: 'cutie patootie expressions',
 	},
 	{
 		url: stripedStepTwoVideoUrl,
 		posterUrl: stripedStepTwoPosterUrl,
-		caption: 'step yaad nahi, vibe yaad hai',
+		caption: 'started potato_moves.exe',
 	},
 	{
 		url: stripedFinaleVideoUrl,
 		posterUrl: stripedFinalePosterUrl,
-		caption: 'cardio detected, system confused',
+		caption: '!!!!!!!!!!!!!',
 	},
 	{
 		url: pajamaPerformanceVideoUrl,
 		posterUrl: pajamaPerformancePosterUrl,
-		caption: 'sofa se stage tak ka safar',
+		caption: 'hawwwwwwwwwwww',
 	},
 	{
 		url: chaosCamVideoUrl,
 		posterUrl: chaosCamPosterUrl,
-		caption: 'camera hil gaya, confidence nahi',
+		caption: 'shamelessly humping in public',
 	},
 	{
 		url: nightDuetVideoUrl,
 		posterUrl: nightDuetPosterUrl,
-		caption: 'public performance, private embarrassment',
+		caption: 'dancing with her main chick',
 	},
 	{
 		url: crowdModeVideoUrl,
 		posterUrl: crowdModePosterUrl,
-		caption: 'crowd support activated',
+		caption: 'tappeya si !!!',
 		layout: 'landscape',
 	},
 	{
 		url: elevatorFinalBossVideoUrl,
 		posterUrl: elevatorFinalBossPosterUrl,
-		caption: 'final boss: elevator choreography',
+		caption: 'elevator mob',
 	},
 	{
 		url: couchPotatoComebackVideoUrl,
 		posterUrl: couchPotatoComebackPosterUrl,
-		caption: 'couch potato ka yearly comeback',
+		caption: 'gamche m thumke',
 	},
 ]
 
