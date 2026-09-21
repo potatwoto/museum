@@ -1,7 +1,7 @@
 import { defineConfig } from 'vite'
 
 export default defineConfig({
-	base: '/museum/',
+	base: './',
 	resolve: {
 		dedupe: ['three'],
 	},
