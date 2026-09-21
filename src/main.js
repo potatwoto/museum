@@ -1,4 +1,3 @@
-import './style.css'
 import { startYourEngines } from './engine/engine.js'
 import { fetchGalleryRoomData, setWikipediaLanguage } from './wiki/wiki.js'
 import { HISTORY_EVOLUTION_TITLE, historyEvolutionGalleryData } from './content/historyEvolution.js'
